@@ -1,0 +1,14 @@
+Achievable Recovery Time Objective (RTO) and Recovery Point Objective (RPO) for this Multi-AZ, multi-region database 
+
+Minimum RTO for a single AZ outage: For multi-AZ RTO the switchover is immediate to standby in another AZ. As one of the dependencies is database activity and transactions, it will help to validate the maximum worse case time any database operation will take. Built in failover ensures switch to another AZ is in a within minutes (and much less than non-automated way). 
+Refer https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.MultiAZSingleStandby.html
+https://aws.amazon.com/blogs/database/amazon-rds-under-the-hood-multi-az/
+____________________________________________________________________________________
+Minimum RTO for a single region outage: In this case, RTO is inter-region transition time (usally in few minutes) and other pending database activity. Read-replica is promoted automatically  on failure of Primary instance. As in multi-AZ all RDS parameters have to be monitored and optimized for database operational load.
+Refer
+https://aws.amazon.com/blogs/database/best-practices-for-amazon-rds-for-postgresql-cross-region-read-replicas/
+___________________________________________________________________________________
+Minimum RPO for a single AZ outage
+Minimum RPO for a single region outage
+Other than optimization requirements, RPO is under 1 second, due to high performance read-only replication standards.
+https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-database-disaster-recovery/choosing-database.html
