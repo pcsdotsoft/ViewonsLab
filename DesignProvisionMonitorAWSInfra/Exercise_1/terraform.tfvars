@@ -1,0 +1,1 @@
+PublicSubnet1CIDR = { cidr_block = "10.1.10.0/24", name = "PublicSubnet1CIDR" }

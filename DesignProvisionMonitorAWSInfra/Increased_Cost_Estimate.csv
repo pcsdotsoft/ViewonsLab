@@ -1,0 +1,28 @@
+Estimate summary																						
+Upfront cost	Monthly cost	Total 12 months cost	Currency																			
+0	17536.688	211540.26	USD																			
+		* Includes upfront cost																				
+																						
+																						
+Detailed Estimate																						
+Group hierarchy	Region	Description	Service	Upfront	Monthly	First 12 months total	Currency	Status	Configuration summary													
+My Estimate	US East (N. Virginia)		Amazon CloudFront	0	2551.25	30615	USD		"Data transfer out to internet (25000 GB per month)	 Data transfer out to origin (25000 GB per month)	 Number of requests (HTTPS) (50000 per month)"											
+My Estimate	US East (N. Virginia)		S3 Standard	0	642.77	7713.24	USD		"S3 Standard storage (25000 GB per month)	 PUT	 COPY	 POST	 LIST requests to S3 Standard (50000)	 GET	 SELECT	 and all other requests from S3 Standard (50000)	 Data returned by S3 Select (25000 GB per month)	 Data scanned by S3 Select (25000 GB per month)"				
+My Estimate	US East (N. Virginia)		Data Transfer	0	250	3000	USD		"DT Inbound: Not selected (0 TB per month)	 DT Outbound: US East (Ohio) (25000 GB per month)"												
+My Estimate	US East (N. Virginia)		Application Load Balancer	0	432.85	5194.2	USD		Number of Application Load Balancers (2)													
+My Estimate	US East (N. Virginia)		Amazon EC2 	0	3228.48	38741.76	USD		"Tenancy (Shared Instances)	 Operating system (Linux)	 Workload (Consistent	 Number of instances: 4)	 Advance EC2 instance (m5a.2xlarge)	 Pricing strategy ( 1yr  No Upfront)	 Enable monitoring (enabled)	 EBS Storage amount (32 GB)	 DT Inbound: Not selected (0 TB per month)	 DT Outbound: Internet (25000 GB per month)	 DT Intra-Region: (0 TB per month)"			
+My Estimate	US East (N. Virginia)		Amazon RDS for MySQL	0	1875.332	22503.98	USD		"Storage for each RDS instance (General Purpose SSD (gp3))	 Storage amount (1 TB)	 Quantity (2)	 Instance type (db.t4g.2xlarge)	 Utilization (On-Demand only) (100 %Utilized/Month)	 Deployment option (Multi-AZ)	 Pricing strategy (Reserved 1yr No Upfront)	 Cost for one month of retention (per vCPU per month) (1.5000000000)	 Cost for each additional month of retention (per vCPU per month) (0.0631000000)	 Cost for total retention (per vCPU per month) (2.19)	 Additional backup storage (1 TB)	 Total Size of Backup Processed for Export (GB) (1024 per month)	 General Purpose SSD (gp3) - IOPS (12000)	 General Purpose SSD (gp3) - Throughput (500 MiBps)"
+My Estimate	US East (Ohio)		Amazon CloudFront	0	2551.25	30615	USD		"Data transfer out to internet (25000 GB per month)	 Data transfer out to origin (25000 GB per month)	 Number of requests (HTTPS) (50000 per month)"											
+My Estimate	US East (N. Virginia)		Amazon EC2 	0	3087.152	37045.82	USD		"Tenancy (Shared Instances)	 Operating system (Linux)	 Workload (Consistent	 Number of instances: 4)	 Advance EC2 instance (t4g.2xlarge)	 Pricing strategy ( 1yr  No Upfront)	 Enable monitoring (enabled)	 EBS Storage amount (32 GB)	 DT Inbound: Not selected (0 TB per month)	 DT Outbound: Internet (25000 GB per month)	 DT Intra-Region: (0 TB per month)"			
+My Estimate	US East (N. Virginia)		Amazon RDS for MySQL	0	2068.052	24816.62	USD		"Storage for each RDS instance (General Purpose SSD (gp3))	 Storage amount (1 TB)	 Quantity (2)	 Instance type (db.m5.2xlarge)	 Utilization (On-Demand only) (100 %Utilized/Month)	 Deployment option (Multi-AZ)	 Pricing strategy (Reserved 1yr No Upfront)	 Cost for one month of retention (per vCPU per month) (1.5000000000)	 Cost for each additional month of retention (per vCPU per month) (0.0631000000)	 Cost for total retention (per vCPU per month) (2.19)	 Additional backup storage (1 TB)	 Total Size of Backup Processed for Export (GB) (1024 per month)	 General Purpose SSD (gp3) - IOPS (12000)	 General Purpose SSD (gp3) - Throughput (500 MiBps)"
+My Estimate	US East (N. Virginia)		Amazon CloudWatch	0	849.558	11294.7	USD		"Number of Metrics (includes detailed and custom metrics) (100)	 Standard Logs: Data Ingested (100 GB)	 Logs Delivered to CloudWatch Logs: Data Ingested (1000 GB)	 Logs Delivered to S3: Data Ingested (1000 GB)	 Expected Logs Data scanned (1000 GB)	 Number of Dashboards (1)	 Number of Standard Resolution Alarm Metrics (75)	 Number of High Resolution Alarm Metrics (25)	 Number of monitored resources (10 per hour)	 Number of city-networks to be monitored (500 per hour)"				
+																						
+																						
+Acknowledgement																						
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors	 including your actual usage of AWS services."																					
+																						
+																						
+RATIONALE FOR REDUNDANCY 																						
+- Added CloudFront Distribution in Ohio Region 																						
+- Added 2 WebServers and 2 EC2 Instances 																						
+- Added 2 RDS instances																						

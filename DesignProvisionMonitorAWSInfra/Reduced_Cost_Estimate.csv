@@ -1,0 +1,27 @@
+﻿																				
+Estimate summary																				
+Upfront cost	Monthly cost	Total 12 months cost	Currency																	
+30844	6489.09	109813.08	USD																	
+		* Includes upfront cost																		
+																				
+																				
+Detailed Estimate																				
+Group hierarchy	Region	Description	Service	Upfront	Monthly	First 12 months total	Currency	Status	Configuration summary											
+My Estimate	US East (N. Virginia)		Amazon CloudFront	0	2551.21	30614.52	USD		"Data transfer out to internet (25000 GB per month)	 Data transfer out to origin (25000 GB per month)	 Number of requests (HTTPS) (12500 per month)"									
+My Estimate	US East (N. Virginia)		S3 Standard	0	642.77	7713.24	USD		"S3 Standard storage (25000 GB per month)	 PUT	 COPY	 POST	 LIST requests to S3 Standard (50000)	 GET	 SELECT	 and all other requests from S3 Standard (50000)	 Data returned by S3 Select (25000 GB per month)	 Data scanned by S3 Select (25000 GB per month)"		
+My Estimate	US East (N. Virginia)		Data Transfer	0	250	3000	USD		"DT Inbound: Not selected (0 TB per month)	 DT Outbound: US East (Ohio) (25000 GB per month)"										
+My Estimate	US East (N. Virginia)		Application Load Balancer	0	432.85	5194.2	USD		Number of Application Load Balancers (2)											
+My Estimate	US East (N. Virginia)		Amazon EC2 	5310	1121.1	18763.2	USD		"Tenancy (Shared Instances)	 Operating system (Linux)	 Workload (Consistent	 Number of instances: 2)	 Advance EC2 instance (t4g.2xlarge)	 Pricing strategy ( 3yr  All Upfront)	 Enable monitoring (enabled)	 EBS Storage amount (16 GB)	 DT Inbound: Not selected (0 TB per month)	 DT Outbound: Internet (12500 GB per month)	 DT Intra-Region: (0 TB per month)"	
+My Estimate	US East (N. Virginia)		Amazon RDS for MySQL	25534	641.6	33233.2	USD		"Storage for each RDS instance (General Purpose SSD (gp2))	 Storage amount (768 GB)	 Quantity (2)	 Instance type (db.t4g.2xlarge)	 Utilization (On-Demand only) (100 %Utilized/Month)	 Deployment option (Multi-AZ)	 Pricing strategy (Reserved 3yr All Upfront)	 Additional backup storage (768 GB)	 Total Size of Backup Processed for Export (GB) (512 per month)	 Cost for one month of retention (per vCPU per month) (1.5000000000)	 Cost for each additional month of retention (per vCPU per month) (0.0631000000)	 Cost for total retention (per vCPU per month) (2.19)"
+My Estimate	US East (N. Virginia)		Amazon CloudWatch	0	849.558	11294.7	USD		"Number of Metrics (includes detailed and custom metrics) (100)	 Standard Logs: Data Ingested (100 GB)	 Logs Delivered to CloudWatch Logs: Data Ingested (1000 GB)	 Logs Delivered to S3: Data Ingested (1000 GB)	 Expected Logs Data scanned (1000 GB)	 Number of Dashboards (1)	 Number of Standard Resolution Alarm Metrics (75)	 Number of High Resolution Alarm Metrics (25)	 Number of monitored resources (10 per hour)	 Number of city-networks to be monitored (500 per hour)"		
+																				
+																				
+																				
+Acknowledgement																				
+"* AWS Pricing Calculator provides only an estimate of your AWS fees and doesn't include any taxes that might apply. Your actual fees depend on a variety of factors	 including your actual usage of AWS services."																			
+																				
+																				
+RATIONALE																				
+- Changed 2 EC2 to prepaid upfront 3 years Reserved Instances																				
+-Changed 2 RDS to prepaid 3 years Reserved instances and 																				
+- Reduced estimate of RDS record size hence, RDS storage to 768GB per month, with its backup/snapshot sizes too																				
