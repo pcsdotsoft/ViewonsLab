@@ -1,0 +1,18 @@
+# What additional architectural change can be made to reduce the internet facing attack surface of the web application instance.
+1. Use a bastion host in public subnet with restricted access to app instance in private subnet
+2. Use MFA solution like tailscale.com for SSH connections
+3. Use SSH PKI public key authentication
+4. Remove SSH service and create immutable instances
+
+# Assuming the IAM permissions for the S3 bucket are still insecure, would creating VPC private endpoints for S3 
+prevent the unauthorized access to the secrets bucket.
+VPC private endpoint is service for secure access to S3 from specified VPC. If attack instance is part of same VPC
+it will be ineffective to prevent unauthorized access.
+
+# Will applying default encryption setting to the s3 buckets encrypt the data that already exists?
+It will not encrypt existing objects by default.
+https://aws.amazon.com/blogs/storage/encrypting-existing-amazon-s3-objects-with-the-aws-cli/
+
+# What would happen if the original cloud formation templates are applied to this environment.
+It will check the drift and restore changes made
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html

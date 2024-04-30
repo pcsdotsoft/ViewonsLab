@@ -1,0 +1,12 @@
+# Identify 2-3 changes that can be made to our environment to prevent an ssh brute force attack from the internet.
+
+1. Change default port from 22 to some other port
+2. Restrict source IP for SSH usage
+3. Use ssh key with passphrase, instead of password authentication
+4. Enable MFA with Privilege access mode using service account in Identity federation
+
+# Neither instance should have had access to the secret recipes bucket, in the even that instance API credentials 
+were compromised how could we have prevented access to sensitive data.
+
+1. Restrict the instance role S3 Bucket policy and only provide Least Use Privilege.
+2. Use Customer managed keys encrypt data, so that it restricts usage only if keys are provided 

@@ -1,0 +1,15 @@
+Based on the architecture diagram, and the steps you have taken so far to upload data and access the application web service, 
+identify at least 2 obvious poor practices as it relates to security.  Include justification.
+
+# Poor practice 1
+SSH port is unrestricted
+Access to WebServer using direct SSH, there are other ways Bastion host with MFA, disable SSH use SessionManager, or Immutable instance
+- use Bastian host with MFA
+  [How to Secure Your Instances with Multi-factor Authentication | Amazon Web Services](https://aws.amazon.com/blogs/startups/securing-ssh-to-amazon-ec2-linux-hosts/
+
+
+# Poor practice 2
+S3 policy is unrestricted
+S3 endpoint Create Least Use privilege for resource and restrict to Principals in Bucket policy
+- blocks traffic to the bucket unless the request is from specified private IP addresses ( **aws:VpcSourceIp**)
+  [Limit Amazon S3 bucket access to certain IPs or VPCs](https://repost.aws/knowledge-center/block-s3-traffic-vpc-ip

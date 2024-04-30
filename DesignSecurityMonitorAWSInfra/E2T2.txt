@@ -1,0 +1,16 @@
+Research and analyze which of the vulnerabilities appear to be related to the code that was deployed 
+for the environment in this project.
+
+Bonus - provide recommendations on how to remediate the vulnerabilities.
+
+EC2 web application security group had INBOUND SSH enabled from internet. This can be restricted to
+specific source IP addresses or a Bastion host can be used.
+
+AWS Config also reports NACL is open on port 22
+
+Remediate with Network security practices, 
+- restrict SSH using IP filtering
+- Create a bastion host with instance in private subnet
+- Change default port from 22 to something above 1024
+- Use Instance identity as part of Privilege access
+- Use AWS Inspector to detect port vulnerability

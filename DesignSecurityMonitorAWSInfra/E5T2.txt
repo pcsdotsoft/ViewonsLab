@@ -1,0 +1,35 @@
+# Identify tools that will allow you to do the following:
+
+## Scan infrastructure as code templates
+1. Open Policy agent Regula
+2. cfn-nag
+
+### Example vulnerability
+Regula has a rule library for most AWS resources, e.g. ebs encryption rule. It evaluates for that compliance
+requirement to keep ebs encrypted. If Terraform plan attempts to create a unencrypted ebs it will block deployment
+
+cfn-nag is a static analysis tool to analyze cloudformation templates for more than 140 vulnerabilities. e.g. It scans for
+Least Use Privilege and reports misuse of "*" wildcard in "Action" or "Resource" in IAM policies of CFN template.
+
+##Scan AMI’s or containers for OS vulnerabilities
+1. Amazon Inspector for EC2 AMI scans
+2. Trivy for Docker and Kubernetes
+
+### Example vulnerability
+Amazon Inspector scans for CVEs, the report provides a CVE id for e.g. CVE-2018-7600 which is a Remote code execution vulnerability, 
+Report also indicates Severity ratings.
+
+Trivy enalbes CVE report finding in Docker images, it will also scan directories for project dependencies having vulnerabilities
+
+
+##Scan an AWS environment for cloud configuration vulnerabilities
+1. AWS Config
+2. Amazon Macie
+
+### Example vulnerability
+AWS config can be set for compliance check of Industry standards. It allows specific Config rules to scan for e.g. to follow
+"Operational Best Practices for NIST 800-53 rev 4" standard
+
+Amazon Macie is a Data security and vulnerability scanner, it will provide visibility into data security risks. For e.g 
+if S3 bucket data policy of sensitive data is violated it provides severity rating of data. It reports appropriate 
+data finding remediation to minimize S3 exposure.
